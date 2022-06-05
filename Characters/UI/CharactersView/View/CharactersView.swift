@@ -34,6 +34,18 @@ class CharacterViewController: UIViewController {
         
         //register cell in table view
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        //settings constraint table view
+        setContstraintTableView()
+        
+    }
+    
+    //MARK: Set constraint table view
+    func setContstraintTableView () {
+        tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        tableView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        tableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
     }
 }
 
