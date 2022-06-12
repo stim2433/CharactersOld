@@ -16,6 +16,9 @@
 		1217DB0D284C971B00281687 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217DB0C284C971B00281687 /* Builder.swift */; };
 		1217DB14284C98A500281687 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217DB13284C98A500281687 /* CharactersView.swift */; };
 		1217DB16284C998400281687 /* CharacterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217DB15284C998400281687 /* CharacterPresenter.swift */; };
+		1217DB1828561B4300281687 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217DB1728561B4300281687 /* Service.swift */; };
+		1217DB1A285622F400281687 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217DB19285622F400281687 /* Endpoint.swift */; };
+		1217DB1C28562C4B00281687 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217DB1B28562C4B00281687 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		1217DB0C284C971B00281687 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		1217DB13284C98A500281687 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		1217DB15284C998400281687 /* CharacterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPresenter.swift; sourceTree = "<group>"; };
+		1217DB1728561B4300281687 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		1217DB19285622F400281687 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1217DB1B28562C4B00281687 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,9 @@
 		1217DB0B284C966500281687 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1217DB1728561B4300281687 /* Service.swift */,
+				1217DB19285622F400281687 /* Endpoint.swift */,
+				1217DB1B28562C4B00281687 /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -212,8 +221,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1217DB16284C998400281687 /* CharacterPresenter.swift in Sources */,
+				1217DB1828561B4300281687 /* Service.swift in Sources */,
+				1217DB1A285622F400281687 /* Endpoint.swift in Sources */,
 				1217DAFA284C932C00281687 /* ViewController.swift in Sources */,
 				1217DB14284C98A500281687 /* CharactersView.swift in Sources */,
+				1217DB1C28562C4B00281687 /* Network.swift in Sources */,
 				1217DAF6284C932C00281687 /* AppDelegate.swift in Sources */,
 				1217DAF8284C932C00281687 /* SceneDelegate.swift in Sources */,
 				1217DB0D284C971B00281687 /* Builder.swift in Sources */,

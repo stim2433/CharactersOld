@@ -26,8 +26,7 @@ class CharacterViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(tableView)
-        
-        
+
         //subscribe datasource and delegate
         tableView.dataSource = self
         tableView.delegate = self
