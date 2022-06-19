@@ -32,7 +32,7 @@ class CharacterViewController: UIViewController {
         tableView.delegate = self
         
         //register cell in table view
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellId)
         
         //settings constraint table view
         setContstraintTableView()
@@ -51,13 +51,24 @@ class CharacterViewController: UIViewController {
 //MARK: extension table view datasource
 extension CharacterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return presenter.model?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CharacterTableViewCell
         
-        cell.backgroundColor = .green
+//        cell.backgroundColor = .green
+        let character = presenter.model?.results [indexPath.row]
+        
+//        presenter.getImage(stingImage: character?.image)
+        
+//        print (presenter.imageData)
+//        guard presenter.imageData != nil else { return cell }
+//        cell.imageGet.image = UIImage(data: presenter.imageData!)
+//        if presenter.imageData != nil {
+//            cell.imageGet.image = UIImage(data: presenter.imageData!)
+//        }
+        
         
         return cell
     }
@@ -70,7 +81,12 @@ extension CharacterViewController: UITableViewDelegate {
 
 //MARK: Subscration Character view protocol
 extension CharacterViewController: CharacterViewProtocol {
+    func load() {
+        presenter.
+    }
+    
     func success() {
+        tableView.reloadData()
         print ("hi, I'm is live")
     }
 }

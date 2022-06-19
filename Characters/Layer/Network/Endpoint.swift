@@ -21,7 +21,7 @@ extension Endpoint: Service {
     var path: String {
         switch self {
         case .character:
-            return "/api/character"
+            return "/api/character/"
         case .getImage(let indexImage):
             return "/api/character/avatar/\(indexImage).jpeg"
         }

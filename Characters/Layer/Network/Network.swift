@@ -16,7 +16,12 @@ class ServiceNetwork<T: Service> {
         call(service.urlRequest, complition: complition)
     }
     
+    func load (stringUrl: String, complition: @escaping (Result<Data, Error>) -> Void) {
+        call(stringUrl, complition: complition)
+    }
+    
     func load<U> (service: T, dataType: U.Type, complition: @escaping (Result<U, Error>) -> Void) where U: Decodable {
+        
         
         call(service.urlRequest) { result in
             switch result {
@@ -41,6 +46,25 @@ extension ServiceNetwork {
     private func call (_ request: URLRequest, deliverQueue: DispatchQueue = DispatchQueue.main, complition: @escaping (Result<Data, Error>) -> Void) {
         
         urlSession.dataTask(with: request) { data, _, error in
+            if let error = error {
+                deliverQueue.async {
+                    complition(.failure(error))
+                }
+            } else {
+                deliverQueue.async {
+                    complition(.success(data!))
+                }
+            }
+            
+        }.resume()
+    }
+    
+    private func call (_ stringURL: String, deliverQueue: DispatchQueue = DispatchQueue.main, complition: @escaping (Result<Data, Error>) -> Void) {
+        
+        guard let url = URL (string: stringURL) else { return }
+        
+        
+        urlSession.dataTask(with: url) { data, _, error in
             if let error = error {
                 deliverQueue.async {
                     complition(.failure(error))

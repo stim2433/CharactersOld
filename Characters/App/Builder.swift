@@ -15,8 +15,9 @@ class Builder {
     func createCharectersView () -> UIViewController {
         let view = CharacterViewController ()
         let presenter = CharacterViewPresenter()
+        let network = ServiceNetwork<Endpoint>()
         
-        presenter.settingView(view: view)
+        presenter.settingView(view: view, network: network)
         view.presenter = presenter
         
         return view
